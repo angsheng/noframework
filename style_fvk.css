@@ -1,0 +1,51 @@
+/*style for fvk.html
+*/
+
+.border {
+	border: 1px solid gray;
+	padding: 1.5rem;
+}
+
+.nav_button {
+	font-weight: 
+}
+
+.flex {
+	list-style: none;
+	display: flex;
+}
+
+nav>ul>li {
+	margin-left: 1rem;
+}
+
+.screen {
+	min-height: 1.5rem;
+	max-width: 10rem;
+	background-color: #7fffd4;
+}
+
+.margin-top {
+	margin-top: 0.5rem 
+}
+
+.left {
+	float: left;
+}
+
+.asider {
+	
+}
+
+#section_b:after {
+	content:'';
+	clear: both;
+}
+
+.clear {
+	clear: both;
+}
+
+.padding {
+	padding: 1.5rem;
+}

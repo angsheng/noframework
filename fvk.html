@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fvk frameworks</title>
+	<link rel="stylesheet" href="style_fvk.css">
+	<script src="js_fvk.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class="flex">
+				<li to='#section_a' class="nav_button">section_a</li>
+				<li to="#section_b" class="nav_button">section_b</li>
+				<li to="#section_c" class="nav_button">section_c</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="section_a" class="border index">a
+			<div id="model_aa">
+				model_aa<br>
+				<input type="text">
+				<div class="screen margin-top"></div>
+			</div>
+			<div id="model_ab">
+				model_ab<br>
+				<select>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				+ 
+				<select>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="0">0</option>
+				</select>
+				<div class="screen margin-top"></div>
+			</div>
+		</section>
+		<section id="section_b" class="border">b<br>
+			<aside class="asider left">
+				<ul>
+					<li class="nav_button" to="#section_b_a">item_a</li>
+					<li class="nav_button" to="#section_b_b">item_b</li>
+					<li class="nav_button" to="#section_b_c">item_c</li>
+					<li class="nav_button" to="#section_b_d">item_d</li>
+					<li class="nav_button" to="#section_b_e">item_e</li>
+				</ul>
+			</aside>
+			<main class="border left padding">
+				<section class="index" id="section_b_a">a</section>
+				<section id="section_b_b">b</section>
+				<section id="section_b_c">c</section>
+				<section id="section_b_d">d</section>
+				<section id="section_b_e">e</section>
+			</main>
+			<div class="clear"></div>
+		</section>
+		<section id="section_c" class="border">c</section>
+	</main>
+	<footer></footer>
+</body>
+</html>
