@@ -2,36 +2,56 @@
 
 
 //easy tool
-var $=function(el){
+var $= function(el){
 	if(el[0]=="#"){
 		return document.querySelector(el);
 	}else{
 		return document.querySelectorAll(el)
 	}
-}
+};
+var ajax= function( method, url, body, callback ){
+		if (body=='undefined') body=null;
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if ( xhr.readyState == 4 ) {
+				if (xhr.status == 200 ) {
+					 callback(xhr.responseText)
+					 console.log(xhr.responseText) 
+				}else{
+					console.log('there get data from ' + url + ' fialed ')
+				}
+			}
+		};
+		xhr.open( method, url, true );
+		xhr.send( body )
+};
 
 
 //start
 window.onload=function(){
+	
+	function hiddenAll(){
+		Array.prototype.forEach.call( $('.router'),function(item,index,array){
+		item.style.display= 'none' });
+	};
 
-	function routeInital(){
-		Array.prototype.forEach.call( $('section'),function(item,index,array){
-			item.style.display="none"
+	//add listen on hashchange
+	window.onhashchange=function(event){
+		hiddenAll();
+		var hash= window.location.hash;
+		var sections=hash.split('/');
+		//add index when use a second class router
+		if( sections[0]=='#section_b' && sections[1]==undefined ){ sections= ['#section_b','section_b_a'] };
+		sections.forEach(function(item,index,array){
+			if(item[0]!='#'){ item= '#'+item };
+			if( $(item) ){  $(item).style.display= 'block' }
 		})
 	};
-	//router inital
+	//router inital when index page;
+	window.onbeforeunload= function(){ window.location.href="" };
+	hiddenAll();
+	$("#section_a").style.display='block';
 
-	routeInital();
-	Array.prototype.forEach.call( $('.index'),function(item,index,array){
-			item.style.display="block";
-		});
-	//inital the navigator button
-	Array.prototype.forEach.call( $(".nav_button"),function(item,index,array){
-		item.onclick= function(){
-			routeInital();	
-			$( this.getAttribute('to') ).style.display="block"
-		}
-	});
 
 	//scetion_a part
 	//model_aa
@@ -60,6 +80,19 @@ window.onload=function(){
 
 
 	//section_b part
+	//section_b_a
 	
+	//add listener
+	var model_b_a_button= $('#model_b_a').children[0],
+		model_b_a_screen= $('#model_b_a').children[2],
+		model_b_a_clear= $('#model_b_a').children[1];
+	model_b_a_button.onclick= function(){
+		ajax('get','./data.txt',undefined,function(r){
+			model_b_a_screen.innerText=r;
+		})
+	};
+	model_b_a_clear.onclick= function(){
+		model_b_a_screen.innerText=null;
+	}
 
 }

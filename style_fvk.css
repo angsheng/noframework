@@ -1,8 +1,10 @@
 /*style for fvk.html
 */
+html {
+	font-size: 17.6px;
+}
 
 .border {
-	border: 1px solid gray;
 	padding: 1.5rem;
 }
 
@@ -34,7 +36,10 @@ nav>ul>li {
 }
 
 .asider {
-	
+	padding: 1.5rem;
+	background-color: silver;
+	min-height: 10rem;
+	border: 1px solid silver;	
 }
 
 #section_b:after {
@@ -48,4 +53,39 @@ nav>ul>li {
 
 .padding {
 	padding: 1.5rem;
+}
+
+.board {
+	min-width:20rem;
+	min-height: 10rem; 
+}
+
+/*for look good */
+button {
+	background-color: #6a5acd;
+	color: white;
+	border-style: none;
+	border:1px solid #6a5acd;
+	border-radius: 2px;
+}
+
+button:hover {
+	background-color: #8d8fde;
+
+}
+
+aside>ul {
+	list-style: lower-alpha ;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input:hover {
+	outline: 2px solid blue;
 }

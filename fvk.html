@@ -10,14 +10,14 @@
 	<header>
 		<nav>
 			<ul class="flex">
-				<li to='#section_a' class="nav_button">section_a</li>
-				<li to="#section_b" class="nav_button">section_b</li>
-				<li to="#section_c" class="nav_button">section_c</li>
+				<li ><a href="#section_a">section_a</a></li>
+				<li ><a href="#section_b">section_b</a></li>
+				<li ><a href="#section_c">section_c</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<section id="section_a" class="border index">a
+		<section id="section_a" class="border index router">a
 			<div id="model_aa">
 				model_aa<br>
 				<input type="text">
@@ -43,26 +43,32 @@
 				<div class="screen margin-top"></div>
 			</div>
 		</section>
-		<section id="section_b" class="border">b<br>
+		<section id="section_b" class="border router">b<br>
 			<aside class="asider left">
 				<ul>
-					<li class="nav_button" to="#section_b_a">item_a</li>
-					<li class="nav_button" to="#section_b_b">item_b</li>
-					<li class="nav_button" to="#section_b_c">item_c</li>
-					<li class="nav_button" to="#section_b_d">item_d</li>
-					<li class="nav_button" to="#section_b_e">item_e</li>
+					<li ><a href="#section_b/section_b_a">item_a </a></li>
+					<li ><a href="#section_b/section_b_b">item_b</a></li>
+					<li ><a href="#section_b/section_b_c">item_c</a></li>
+					<li ><a href="#section_b/section_b_d"> item_d</a></li>
+					<li ><a href="#section_b/section_b_e"> item_e</a></li>
 				</ul>
 			</aside>
 			<main class="border left padding">
-				<section class="index" id="section_b_a">a</section>
-				<section id="section_b_b">b</section>
-				<section id="section_b_c">c</section>
-				<section id="section_b_d">d</section>
-				<section id="section_b_e">e</section>
+				<section class="router index board" id="section_b_a">a
+					<div id="model_b_a">
+						<button>get message through ajax</button>
+						<button>clear</button>
+						<div class="screen margin-top"></div>
+					</div>
+				</section>
+				<section id="section_b_b" class="router board">b</section>
+				<section id="section_b_c" class="router board">c</section>
+				<section id="section_b_d" class="router board">d</section>
+				<section id="section_b_e" class="router board">e</section>
 			</main>
 			<div class="clear"></div>
 		</section>
-		<section id="section_c" class="border">c</section>
+		<section id="section_c" class="border router">c</section>
 	</main>
 	<footer></footer>
 </body>
