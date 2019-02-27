@@ -33,6 +33,7 @@ window.onload=function(){
 	function hiddenAll(){
 		Array.prototype.forEach.call( $('.router'),function(item,index,array){
 		item.style.display= 'none' });
+		console.log("hiddenAll!!")
 	};
 
 	//add listen on hashchange
@@ -41,16 +42,22 @@ window.onload=function(){
 		var hash= window.location.hash;
 		var sections=hash.split('/');
 		//add index when use a second class router
-		if( sections[0]=='#section_b' && sections[1]==undefined ){ sections= ['#section_b','section_b_a'] };
+	//	if( sections[0]=='#section_b' && sections[1]==undefined ){ sections= ['#section_b','section_b_a'] }; 
+	//mark the entery button with the id what you want to show
 		sections.forEach(function(item,index,array){
 			if(item[0]!='#'){ item= '#'+item };
 			if( $(item) ){  $(item).style.display= 'block' }
 		})
 	};
-	//router inital when index page;
-	window.onbeforeunload= function(){ window.location.href="" };
-	hiddenAll();
-	$("#section_a").style.display='block';
+	//router inital when loaded page;
+	var h = window.location.hash;
+	if(h==""){
+		window.location.hash = "#section_a" //the default show;
+	}else{
+		window.location.hash = "";//the browser will consider that no change happen when hash string is equal;
+		window.location.hash = h //emitte hashchanged event
+
+	};
 
 
 	//scetion_a part

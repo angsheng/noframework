@@ -1,5 +1,9 @@
 /*style for fvk.html
 */
+.router {
+	display: none;
+}
+
 html {
 	font-size: 17.6px;
 }
